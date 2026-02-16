@@ -11,8 +11,11 @@
     --clr-right-side: hwb(204 86% 12%);
     --clr-form-info: white;
     --clr-logo: white;
-    --clr-submit: #5c6c4a;
-
+    --clr-submit: #596D48;
+    --clr-input-border: #E5E7EB;
+    --clr-input-border-required: hsl(180, 1%, 67%);
+    --clr-input-border-focus: blue;
+    --clr-box-shadow: #bebebe;
 }
 
 body {
@@ -98,7 +101,7 @@ h1 {
 .form-info {
     padding: 0px 40px 20px 40px;
     background-color: var(--clr-form-info);
-    box-shadow: 0px 5px 5px 5px #bebebe;
+    box-shadow: 0px 5px 5px 5px var(--clr-box-shadow);
 
     display: flex;
     flex-direction: column;
@@ -122,10 +125,27 @@ h1 {
 .form-label {
     font-size: 12px;
     text-transform: uppercase;
+
+    span {
+        font-size: 0.8em;
+        text-transform: capitalize;
+    }
 }
 
 input {
-    width: 150px
+    width: 150px;
+    border-radius: 3px;
+    border: 1px solid var(--clr-input-border);
+}
+
+input:required {
+        border-color: var(--clr-input-border-required);
+    }
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--clr-input-border-focus);
+    box-shadow: 1px 1px 1px 1px var(--clr-box-shadow);
 }
 
 .form-submit {
