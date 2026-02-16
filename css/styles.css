@@ -16,6 +16,9 @@
     --clr-input-border-required: hsl(180, 1%, 67%);
     --clr-input-border-focus: blue;
     --clr-box-shadow: #bebebe;
+    --clr-valid-input: rgb(182, 231, 182);
+    --clr-invalid-input: rgb(225, 181, 181);
+
 }
 
 body {
@@ -146,6 +149,26 @@ input:focus {
     outline: none;
     border: 1px solid var(--clr-input-border-focus);
     box-shadow: 1px 1px 1px 1px var(--clr-box-shadow);
+}
+
+input:user-valid {
+    background-color: var(--clr-valid-input) ;
+}
+
+input:user-invalid {
+    background-color: var(--clr-invalid-input) ;
+}
+
+.hint {
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: var(--clr-input-border-focus);
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.info-column:focus-within .hint {
+    opacity: 1;
 }
 
 .form-submit {
